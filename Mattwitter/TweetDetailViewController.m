@@ -33,7 +33,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-
+    self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
+    
     self.title = @"Tweet";
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Reply" style:UIBarButtonItemStylePlain target:self action:@selector(onReply:)];
     self.navigationItem.rightBarButtonItem = rightButton;

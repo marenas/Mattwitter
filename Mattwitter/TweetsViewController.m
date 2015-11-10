@@ -37,6 +37,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
+    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     [self.tableView setRowHeight:UITableViewAutomaticDimension];

@@ -29,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
     
     self.characterCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 25, 15)];
     self.characterCountLabel.font = [UIFont systemFontOfSize:12];
