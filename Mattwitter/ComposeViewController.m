@@ -81,7 +81,6 @@
 - (void)onTweetButton {
     NSString *text = self.tweetTextView.text;
     [[TwitterClient sharedInstance] postTweet:text replyID:self.replyToTweet.tweetId  completion:^(id help, NSError *error) {
-        NSLog(@"tweet posted");
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
 }

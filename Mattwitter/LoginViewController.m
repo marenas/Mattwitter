@@ -38,12 +38,9 @@
 - (IBAction)onLogin:(id)sender {
     [[TwitterClient sharedInstance] loginWithCompletion:^(User *user, NSError *error) {
         if (user != nil) {
-            //modally present tweets view
-            NSLog(@"Welcome to %@", user.name);
             TweetsViewController *vc = [[TweetsViewController alloc] init];
             UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
             [self presentViewController:nvc animated:YES completion:nil];
-
         } else {
             //present error view
         }

@@ -30,15 +30,15 @@
         _retweetCount = [dictionary[@"retweet_count"] integerValue];
         _favoriteCount = [dictionary[@"favorite_count"] integerValue];
         if ([(NSNumber *)dictionary[@"favorited"] boolValue] == 0) {
-            _favorited = NO;
+            _favorited = 0;
         } else {
-            _favorited = YES;
+            _favorited = (NSNumber *)dictionary[@"favorited"];
         }
         
         if ([(NSNumber *)dictionary[@"retweeted"] boolValue] == 0) {
-            _retweeted = NO;
+            _retweeted = 0;
         } else {
-            _retweeted = YES;
+            _retweeted = (NSNumber *)dictionary[@"favorited"];
         }
 
     }

@@ -47,14 +47,12 @@
 
 - (IBAction)onRetweet:(id)sender {
     [[TwitterClient sharedInstance] retweet:_tweet.tweetId completion:^(id help, NSError *error) {
-        NSLog(@"Test retweet");
         UIImage *btnImage = [UIImage imageNamed:@"retweet-image-on"];
         [self.retweetButton setImage:btnImage forState:UIControlStateNormal];
     }];
 }
 - (IBAction)onFavorite:(id)sender {
     [[TwitterClient sharedInstance] favourite:_tweet.tweetId completion:^(id help, NSError *error) {
-        NSLog(@"Favorited");
         UIImage *btnImage = [UIImage imageNamed:@"favorite-image-on.png"];
         [self.favoriteButton setImage:btnImage forState:UIControlStateNormal];
     }];
@@ -62,7 +60,6 @@
 
 - (void)onReply:(id)sender
 {
-    NSLog(@"on reply :D");
     ComposeViewController *vc = [[ComposeViewController alloc] init];
     vc.replyToTweet = self.tweet;
     UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
@@ -88,7 +85,6 @@
     }
     
     [self.userProfileImageView setImageWithURL:[NSURL URLWithString:tweetToDisplay.user.profileImageUrl]];
-    NSLog(@"image url : %@",tweetToDisplay.user.profileImageUrl);
     self.userNameLabel.text = tweetToDisplay.user.name;
     self.userScreenNameLabel.text = [NSString stringWithFormat:@"@%@", tweetToDisplay.user.screenname];
     NSString *dateString = [NSDateFormatter localizedStringFromDate:tweetToDisplay.createdAt
@@ -99,13 +95,19 @@
     self.favoritesCountLabel.text = [NSString stringWithFormat:@"%ld", tweetToDisplay.favoriteCount];
     
     self.tweetTextLabel.text = tweetToDisplay.text;
-    if (tweetToDisplay.retweeted == YES) {
+    if ([tweetToDisplay.retweeted boolValue] == YES ) {
         UIImage *btnImage = [UIImage imageNamed:@"retweet-image-on.png"];
+        [self.retweetButton setImage:btnImage forState:UIControlStateNormal];
+    } else {
+        UIImage *btnImage = [UIImage imageNamed:@"retweet-image.png"];
         [self.retweetButton setImage:btnImage forState:UIControlStateNormal];
     }
     
-    if (tweetToDisplay.favorited == YES) {
+    if ([tweetToDisplay.favorited boolValue] == YES ) {
         UIImage *btnImage = [UIImage imageNamed:@"favorite-image-on"];
+        [self.favoriteButton setImage:btnImage forState:UIControlStateNormal];
+    } else {
+        UIImage *btnImage = [UIImage imageNamed:@"favorite-image"];
         [self.favoriteButton setImage:btnImage forState:UIControlStateNormal];
     }
 

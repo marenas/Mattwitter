@@ -38,9 +38,7 @@ NSString * const kTwitterBaseUrl = @"https://api.twitter.com";
     
     [self.requestSerializer removeAccessToken];
     [self fetchRequestTokenWithPath:@"oauth/request_token" method:@"GET" callbackURL:[NSURL URLWithString:@"mattwitterdemo://oauth"] scope:nil success:^(BDBOAuth1Credential *requestToken) {
-            NSLog(@"got the request token!");
             NSURL *authURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.twitter.com/oauth/authorize?oauth_token=%@", requestToken.token]];
-            NSLog(@"auth url: %@",authURL);
             [[UIApplication sharedApplication] openURL:authURL];
         } failure:^(NSError *error) {
             NSLog(@"Failed to get the request token");
@@ -51,12 +49,10 @@ NSString * const kTwitterBaseUrl = @"https://api.twitter.com";
 -(void)openURL:(NSURL *)url {
     [self fetchAccessTokenWithPath:@"oauth/access_token" method:@"POST" requestToken:[BDBOAuth1Credential credentialWithQueryString:url.query] success:
      ^(BDBOAuth1Credential *accessToken) {
-         NSLog(@"got access token");
          [self.requestSerializer saveAccessToken:accessToken];
          [self GET:@"1.1/account/verify_credentials.json" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
              User *user = [[User alloc] initWithDictionary:responseObject];
              [User setCurrentUser:user];
-             NSLog(@"current user : %@", user.name);
              self.loginComletion(user, nil);
          } failure:^(AFHTTPRequestOperation * _Nonnull operation, NSError * _Nonnull error) {
              NSLog(@"failed to get current user");

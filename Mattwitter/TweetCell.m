@@ -13,17 +13,17 @@
 
 
 @interface TweetCell ()
-@property (weak, nonatomic) IBOutlet UIImageView *retweetedIcon;
-@property (weak, nonatomic) IBOutlet UILabel *retweetedByUserNameLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *userProfileImageView;
-@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *userScreenNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *createdAtLabel;
-@property (weak, nonatomic) IBOutlet UILabel *tweetTextLabel;
-@property (weak, nonatomic) IBOutlet UIButton *replyButton;
-@property (weak, nonatomic) IBOutlet UIButton *retweetButton;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *userProgileImageTopLayoutConstraint;
-@property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
+@property (strong, nonatomic) IBOutlet UIImageView *retweetedIcon;
+@property (strong, nonatomic) IBOutlet UILabel *retweetedByUserNameLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *userProfileImageView;
+@property (strong, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *userScreenNameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *createdAtLabel;
+@property (strong, nonatomic) IBOutlet UILabel *tweetTextLabel;
+@property (strong, nonatomic) IBOutlet UIButton *replyButton;
+@property (strong, nonatomic) IBOutlet UIButton *retweetButton;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *userProgileImageTopLayoutConstraint;
+@property (strong, nonatomic) IBOutlet UIButton *favoriteButton;
 @end
 
 @implementation TweetCell
@@ -63,19 +63,24 @@
     }
     
     [self.userProfileImageView setImageWithURL:[NSURL URLWithString:tweetToDisplay.user.profileImageUrl]];
-    NSLog(@"image url : %@",tweetToDisplay.user.profileImageUrl);
     self.userNameLabel.text = tweetToDisplay.user.name;
     self.userScreenNameLabel.text = [NSString stringWithFormat:@"@%@", tweetToDisplay.user.screenname];
     self.createdAtLabel.text = [tweetToDisplay hoursSinceTweet];
 
     self.tweetTextLabel.text = tweetToDisplay.text;
-    if (tweetToDisplay.retweeted == YES) {
+    if ([tweetToDisplay.retweeted boolValue] == YES ) {
         UIImage *btnImage = [UIImage imageNamed:@"retweet-image-on.png"];
+        [self.retweetButton setImage:btnImage forState:UIControlStateNormal];
+    } else {
+        UIImage *btnImage = [UIImage imageNamed:@"retweet-image.png"];
         [self.retweetButton setImage:btnImage forState:UIControlStateNormal];
     }
     
-    if (tweetToDisplay.favorited == YES) {
+    if ([tweetToDisplay.favorited boolValue] == YES) {
         UIImage *btnImage = [UIImage imageNamed:@"favorite-image-on"];
+        [self.favoriteButton setImage:btnImage forState:UIControlStateNormal];
+    } else {
+        UIImage *btnImage = [UIImage imageNamed:@"favorite-image"];
         [self.favoriteButton setImage:btnImage forState:UIControlStateNormal];
     }
 
@@ -91,7 +96,6 @@
 - (IBAction)onRetweetButton:(id)sender {
     
     [[TwitterClient sharedInstance] retweet:_tweet.tweetId completion:^(id help, NSError *error) {
-        NSLog(@"Test retweet");
         UIImage *btnImage = [UIImage imageNamed:@"retweet-image-on"];
         [self.retweetButton setImage:btnImage forState:UIControlStateNormal];
     }];
@@ -100,7 +104,6 @@
 - (IBAction)onFavoriteButton:(id)sender {
 
     [[TwitterClient sharedInstance] favourite:_tweet.tweetId completion:^(id help, NSError *error) {
-        NSLog(@"Favorited");
         UIImage *btnImage = [UIImage imageNamed:@"favorite-image-on.png"];
         [self.favoriteButton setImage:btnImage forState:UIControlStateNormal];        
     }];
