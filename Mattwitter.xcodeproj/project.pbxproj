@@ -11,6 +11,12 @@
 		60050C971BEEA39000581CC3 /* TweetDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60050C951BEEA39000581CC3 /* TweetDetailViewController.xib */; };
 		60050C9C1BEEE17300581CC3 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60050C9A1BEEE17300581CC3 /* ComposeViewController.m */; };
 		60050C9D1BEEE17300581CC3 /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60050C9B1BEEE17300581CC3 /* ComposeViewController.xib */; };
+		60050CA11BF1D3DB00581CC3 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60050C9F1BF1D3DB00581CC3 /* MainViewController.m */; };
+		60050CA21BF1D3DB00581CC3 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60050CA01BF1D3DB00581CC3 /* MainViewController.xib */; };
+		60050CA61BF1E08900581CC3 /* ContentNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60050CA41BF1E08900581CC3 /* ContentNavigationController.m */; };
+		60050CA71BF1E08900581CC3 /* ContentNavigationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60050CA51BF1E08900581CC3 /* ContentNavigationController.xib */; };
+		60050CAB1BF1E73000581CC3 /* SlideoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60050CA91BF1E73000581CC3 /* SlideoutViewController.m */; };
+		60050CAC1BF1E73000581CC3 /* SlideoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60050CAA1BF1E73000581CC3 /* SlideoutViewController.xib */; };
 		602495851BE88D360048A457 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 602495841BE88D360048A457 /* main.m */; };
 		602495881BE88D360048A457 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 602495871BE88D360048A457 /* AppDelegate.m */; };
 		602495901BE88D360048A457 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6024958F1BE88D360048A457 /* Assets.xcassets */; };
@@ -26,6 +32,10 @@
 		602495CC1BEB205C0048A457 /* TweetsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602495CA1BEB205C0048A457 /* TweetsViewController.xib */; };
 		602495D01BEB3FE90048A457 /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 602495CE1BEB3FE90048A457 /* TweetCell.m */; };
 		602495D11BEB3FE90048A457 /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 602495CF1BEB3FE90048A457 /* TweetCell.xib */; };
+		60EC6D8C1BF46D3000072FF0 /* SlideoutHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EC6D8A1BF46D3000072FF0 /* SlideoutHeaderTableViewCell.m */; };
+		60EC6D8D1BF46D3000072FF0 /* SlideoutHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60EC6D8B1BF46D3000072FF0 /* SlideoutHeaderTableViewCell.xib */; };
+		60ED11F91BF5BD5800F2D73C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60ED11F71BF5BD5800F2D73C /* ProfileViewController.m */; };
+		60ED11FA1BF5BD5800F2D73C /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60ED11F81BF5BD5800F2D73C /* ProfileViewController.xib */; };
 		DB48D2526931996EB113D145 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C931F886C675405E065E238E /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +63,15 @@
 		60050C991BEEE17300581CC3 /* ComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		60050C9A1BEEE17300581CC3 /* ComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		60050C9B1BEEE17300581CC3 /* ComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
+		60050C9E1BF1D3DB00581CC3 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		60050C9F1BF1D3DB00581CC3 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		60050CA01BF1D3DB00581CC3 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		60050CA31BF1E08900581CC3 /* ContentNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentNavigationController.h; sourceTree = "<group>"; };
+		60050CA41BF1E08900581CC3 /* ContentNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentNavigationController.m; sourceTree = "<group>"; };
+		60050CA51BF1E08900581CC3 /* ContentNavigationController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentNavigationController.xib; sourceTree = "<group>"; };
+		60050CA81BF1E73000581CC3 /* SlideoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideoutViewController.h; sourceTree = "<group>"; };
+		60050CA91BF1E73000581CC3 /* SlideoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideoutViewController.m; sourceTree = "<group>"; };
+		60050CAA1BF1E73000581CC3 /* SlideoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideoutViewController.xib; sourceTree = "<group>"; };
 		602495801BE88D360048A457 /* Mattwitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mattwitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		602495841BE88D360048A457 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		602495861BE88D360048A457 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -81,6 +100,12 @@
 		602495CD1BEB3FE90048A457 /* TweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetCell.h; sourceTree = "<group>"; };
 		602495CE1BEB3FE90048A457 /* TweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetCell.m; sourceTree = "<group>"; };
 		602495CF1BEB3FE90048A457 /* TweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCell.xib; sourceTree = "<group>"; };
+		60EC6D891BF46D3000072FF0 /* SlideoutHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideoutHeaderTableViewCell.h; sourceTree = "<group>"; };
+		60EC6D8A1BF46D3000072FF0 /* SlideoutHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideoutHeaderTableViewCell.m; sourceTree = "<group>"; };
+		60EC6D8B1BF46D3000072FF0 /* SlideoutHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideoutHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		60ED11F61BF5BD5800F2D73C /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		60ED11F71BF5BD5800F2D73C /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		60ED11F81BF5BD5800F2D73C /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		ABB8EF6A1A1FD3CAB20C8AFB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BA625AF9EC68DE0C2E8A5484 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C931F886C675405E065E238E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +155,21 @@
 				602495CD1BEB3FE90048A457 /* TweetCell.h */,
 				602495CE1BEB3FE90048A457 /* TweetCell.m */,
 				602495CF1BEB3FE90048A457 /* TweetCell.xib */,
+				60050C9E1BF1D3DB00581CC3 /* MainViewController.h */,
+				60050C9F1BF1D3DB00581CC3 /* MainViewController.m */,
+				60050CA01BF1D3DB00581CC3 /* MainViewController.xib */,
+				60050CA31BF1E08900581CC3 /* ContentNavigationController.h */,
+				60050CA41BF1E08900581CC3 /* ContentNavigationController.m */,
+				60050CA51BF1E08900581CC3 /* ContentNavigationController.xib */,
+				60050CA81BF1E73000581CC3 /* SlideoutViewController.h */,
+				60050CA91BF1E73000581CC3 /* SlideoutViewController.m */,
+				60050CAA1BF1E73000581CC3 /* SlideoutViewController.xib */,
+				60EC6D891BF46D3000072FF0 /* SlideoutHeaderTableViewCell.h */,
+				60EC6D8A1BF46D3000072FF0 /* SlideoutHeaderTableViewCell.m */,
+				60EC6D8B1BF46D3000072FF0 /* SlideoutHeaderTableViewCell.xib */,
+				60ED11F61BF5BD5800F2D73C /* ProfileViewController.h */,
+				60ED11F71BF5BD5800F2D73C /* ProfileViewController.m */,
+				60ED11F81BF5BD5800F2D73C /* ProfileViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -339,10 +379,15 @@
 				602495CC1BEB205C0048A457 /* TweetsViewController.xib in Resources */,
 				60050C971BEEA39000581CC3 /* TweetDetailViewController.xib in Resources */,
 				602495D11BEB3FE90048A457 /* TweetCell.xib in Resources */,
+				60050CA21BF1D3DB00581CC3 /* MainViewController.xib in Resources */,
 				602495931BE88D360048A457 /* LaunchScreen.storyboard in Resources */,
 				60050C9D1BEEE17300581CC3 /* ComposeViewController.xib in Resources */,
+				60ED11FA1BF5BD5800F2D73C /* ProfileViewController.xib in Resources */,
 				602495901BE88D360048A457 /* Assets.xcassets in Resources */,
+				60050CAC1BF1E73000581CC3 /* SlideoutViewController.xib in Resources */,
+				60EC6D8D1BF46D3000072FF0 /* SlideoutHeaderTableViewCell.xib in Resources */,
 				602495BD1BE88EB50048A457 /* LoginViewController.xib in Resources */,
+				60050CA71BF1E08900581CC3 /* ContentNavigationController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,9 +460,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60050CA11BF1D3DB00581CC3 /* MainViewController.m in Sources */,
+				60EC6D8C1BF46D3000072FF0 /* SlideoutHeaderTableViewCell.m in Sources */,
 				602495C01BE88FEE0048A457 /* TwitterClient.m in Sources */,
 				602495881BE88D360048A457 /* AppDelegate.m in Sources */,
+				60ED11F91BF5BD5800F2D73C /* ProfileViewController.m in Sources */,
 				602495C71BE960BC0048A457 /* User.m in Sources */,
+				60050CAB1BF1E73000581CC3 /* SlideoutViewController.m in Sources */,
 				60050C9C1BEEE17300581CC3 /* ComposeViewController.m in Sources */,
 				602495C41BE960A60048A457 /* Tweet.m in Sources */,
 				602495851BE88D360048A457 /* main.m in Sources */,
@@ -425,6 +474,7 @@
 				602495BC1BE88EB50048A457 /* LoginViewController.m in Sources */,
 				602495CB1BEB205C0048A457 /* TweetsViewController.m in Sources */,
 				602495D01BEB3FE90048A457 /* TweetCell.m in Sources */,
+				60050CA61BF1E08900581CC3 /* ContentNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@
 #import <UIImageView+AFNetworking.h>
 #import "TwitterClient.h"
 #import "ComposeViewController.h"
+#import "ProfileViewController.h"
 
 
 @interface TweetCell ()
@@ -44,7 +45,6 @@
 }
 
 - (void)reloadData {
-//    self.userProfileImageView.image = nil;
     
     Tweet *tweetToDisplay;
     if (self.tweet.retweetedTweet == nil) {
@@ -84,6 +84,14 @@
         [self.favoriteButton setImage:btnImage forState:UIControlStateNormal];
     }
 
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onCustomTap:)];
+    self.userProfileImageView.userInteractionEnabled = true;
+    [self.userProfileImageView addGestureRecognizer:tapGestureRecognizer];
+    
+}
+
+- (void)onCustomTap:(UITapGestureRecognizer *)tapGestureRecognizer {
+    [self.delegate didTapProfileImage:self];
 }
 
 - (IBAction)onReplyButton:(id)sender {

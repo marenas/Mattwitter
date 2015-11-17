@@ -82,13 +82,6 @@
                     <color key="textColor" red="0.70196078431372544" green="0.70196078431372544" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VlS-SD-5Rw">
-                    <rect key="frame" x="8" y="91" width="40" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="40" id="D45-sV-rtS"/>
-                        <constraint firstAttribute="height" constant="40" id="PbN-4a-p6D"/>
-                    </constraints>
-                </imageView>
                 <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wdg-cY-oPq">
                     <rect key="frame" x="8" y="233" width="16" height="16"/>
                     <constraints>
@@ -162,8 +155,15 @@
                         <constraint firstAttribute="width" constant="10" id="naH-sV-PDP"/>
                     </constraints>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VlS-SD-5Rw">
+                    <rect key="frame" x="8" y="91" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="D45-sV-rtS"/>
+                        <constraint firstAttribute="height" constant="40" id="PbN-4a-p6D"/>
+                    </constraints>
+                </imageView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Qvo-Rb-1yd" firstAttribute="centerY" secondItem="wuQ-2r-EtV" secondAttribute="centerY" id="1Yh-0y-oNH"/>
                 <constraint firstItem="m1u-lv-wiZ" firstAttribute="leading" secondItem="wuQ-2r-EtV" secondAttribute="leading" id="1rY-dI-caR"/>

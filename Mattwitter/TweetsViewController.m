@@ -13,6 +13,7 @@
 #import "TweetCell.h"
 #import "TweetDetailViewController.h"
 #import "ComposeViewController.h"
+#import "ProfileViewController.h"
 
 @interface TweetsViewController ()
 
@@ -28,7 +29,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Home";
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Signt Out" style:UIBarButtonItemStylePlain target:self action:@selector(onSignOutButton)];
+        self.timelineType = HomeTimeline;
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"New" style:UIBarButtonItemStylePlain target:self action:@selector(onNewButton)];
     }
     return self;
@@ -72,19 +73,16 @@
     TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell" forIndexPath:indexPath];
     cell.tweet = (Tweet *)self.tweets[indexPath.row];
     cell.parentViewController = self;
+    cell.delegate = self;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+
     TweetDetailViewController *vc = [[TweetDetailViewController alloc] init];
     vc.tweet = self.tweets[indexPath.row];
-    
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
-- (void)onSignOutButton {
-    [User logout];
+    [self.navigationController pushViewController:vc animated:YES];    
 }
 
 - (void)onRefreshControl:(UIRefreshControl *)refreshControl
@@ -95,12 +93,19 @@
 }
 
 - (void)loadTweetsWithCompletionHandler:(void (^)(void))completionHandler {
-    [[TwitterClient sharedInstance] homeTimelineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
-        self.tweets = tweets;
-        [self.tableView reloadData];
-        completionHandler();
-    }];
-    
+    if (self.timelineType == HomeTimeline) {
+        [[TwitterClient sharedInstance] homeTimelineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
+            self.tweets = tweets;
+            [self.tableView reloadData];
+            completionHandler();
+        }];
+    } else if (self.timelineType == MentionsTimeline) {
+        [[TwitterClient sharedInstance] mentionsTimelineWithParams:nil completion:^(NSArray *tweets, NSError *error) {
+            self.tweets = tweets;
+            [self.tableView reloadData];
+            completionHandler();
+        }];
+    }    
 }
 
 - (void)onNewButton {
@@ -110,6 +115,15 @@
     [self presentViewController:nvc animated:YES completion:nil];
 }
 
+- (void)didTapProfileImage:(TweetCell *)cell {
+    ProfileViewController *vc = [[ProfileViewController alloc] init];
+    if (cell.tweet.retweetedTweet == nil) {
+        vc.user = cell.tweet.user;
+    } else {
+        vc.user = cell.tweet.retweetedTweet.user;
+    }    
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 /*
 #pragma mark - Navigation

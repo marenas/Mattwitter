@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "ComposeTweetViewController.h"
-//@interface TweetsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, ComposeTweetViewControllerDelegate>
+#import "TweetCell.h"
 
-@interface TweetsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+typedef NS_ENUM(NSInteger, TimelineType) {
+    	    HomeTimeline,
+    	    MentionsTimeline
+};
+
+@interface TweetsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, TweetCellDelegate>
+
+@property (nonatomic) TimelineType timelineType;
 
 @end
